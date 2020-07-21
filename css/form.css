@@ -1,0 +1,54 @@
+.form {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr minmax(131px, auto);
+    background-color: white;
+    grid-template-areas: 
+    "a a"
+    "b c"
+    ;
+}
+
+@media (max-width: 500px) {
+    .form {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        ;
+    }
+}
+
+.form__header {
+    grid-area:  a;
+    flex-basis: 100%;
+    border-bottom: 4px solid #eee;
+    padding: 20px;
+    margin: 0px;
+}
+
+
+.form__input {
+    margin: 20px;
+    padding: 10px;
+    grid-area: b;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form__button {
+    margin: 20px 20px 20px 0px;
+    padding: 10px;
+    grid-area: c;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 500px) {
+    .form__button {
+        margin: 0px 20px 20px 20px;
+    }
+}

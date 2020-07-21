@@ -1,0 +1,44 @@
+.section {
+    display: grid;
+    margin: 10px;
+    grid-template-columns: 1fr;
+    background-color: white;
+    margin-top: 10px;
+    grid-template-areas: 
+    "a"
+    "b"
+    ;
+}
+
+.section__header {
+    grid-area: a;
+    margin: 0px;
+    padding: 20px;
+    border-bottom: 4px solid #eee;
+}
+
+.section__list {
+    grid-area: b;
+    margin: 20px;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.section__listItem {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #eee;
+    padding: 15px;
+}
+
+.section__button {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    align-self: center;
+}
+
+.section__listItemText {
+    flex: 1;
+    padding: 0px 10px;
+}
