@@ -42,3 +42,9 @@
     flex: 1;
     padding: 0px 10px;
 }
+
+.section__listItemText--done {
+    flex: 1;
+    padding: 0px 10px;
+    text-decoration: line-through;
+}
