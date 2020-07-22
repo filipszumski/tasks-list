@@ -2,13 +2,22 @@
 {
     const tasks = [];
 
+    const removeTask = (index) => {
+        tasks.splice(index, 1);
+        render();
+    };
+
+    const toggleTaskDone = (index) => {
+        tasks[index].done = !tasks[index].done;
+        render();
+    };
+
     const bindRemoveEvent = () => {
         const taskRemoveButton = document.querySelectorAll(".js-delete");
 
         taskRemoveButton.forEach((taskRemoveButton, index) => {
             taskRemoveButton.addEventListener("click", () => {
-                tasks.splice(index, 1);
-                render();
+                removeTask(index)
             });
         });
     };
@@ -16,11 +25,9 @@
     const bindToggleEvent = () => {
         const taskToggleButton = document.querySelectorAll(".js-done");
 
-
         taskToggleButton.forEach((taskDoneButton, index) => {
             taskDoneButton.addEventListener("click", () => {
-                tasks[index].done = !tasks[index].done;
-                render();
+                toggleTaskDone(index)
             });
         });
     };
@@ -44,9 +51,9 @@
 
             htmlString += `
             <li class="section__listItem">
-                    <button class="section__button js-done">${task.done ? "✅" : "&#129001;"}</button>
+                    <button class="section__button section__button--done js-done">${task.done ? "&#10003;" : ""}</button>
                     <span class="${task.done ? "section__listItemText--done" : "section__listItemText"} js-taskText">${task.content}</span>
-                    <button class="section__button js-delete">&#10060;</button>
+                    <button class="section__button section__button--remove js-delete">&#10005;</button>
                 </li>
           `};
 
