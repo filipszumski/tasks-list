@@ -22,7 +22,7 @@
         });
     };
 
-    const bindToggleEvent = () => {
+    const bindToggleDoneEvent = () => {
         const taskToggleButton = document.querySelectorAll(".js-done");
 
         taskToggleButton.forEach((taskDoneButton, index) => {
@@ -40,17 +40,24 @@
         for (const task of tasks) {
 
             htmlString += `
-            <li class="section__listItem">
-                    <button class="section__button section__button--done js-done">${task.done ? "&#10003;" : ""}</button>
-                    <span class="${task.done ? "section__listItemText--done" : "section__listItemText"} js-taskText">${task.content}</span>
-                    <button class="section__button section__button--remove js-delete">&#10005;</button>
-                </li>
-          `};
+            <li class="tasks__listItem">
+                    <button class="tasks__button tasks__button--done js-done">
+                    ${task.done ? "&#10003;" : ""}
+                    </button>
+                    <span class="${task.done ? "tasks__listItemText--done" : "tasks__listItemText"} js-taskText">
+                    ${task.content}
+                    </span>
+                    <button class="tasks__button tasks__button--remove js-delete">
+                    &#10005;
+                    </button>
+            </li>
+          `;
+        };
 
         tasksList.innerHTML = htmlString;
 
         bindRemoveEvent();
-        bindToggleEvent();
+        bindToggleDoneEvent();
     };
 
     const addNewTask = (newTask) => {
@@ -63,7 +70,6 @@
         render();
     };
 
-
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -72,7 +78,6 @@
             addNewTask(newTask);
             newTask.value = ""
         }
-
         newTask.focus();
     };
 
