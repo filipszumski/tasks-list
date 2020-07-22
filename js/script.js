@@ -32,16 +32,6 @@
         });
     };
 
-    const addNewTask = (newTask) => {
-        tasks.push(
-            {
-                content: newTask.value.trim(),
-                done: false,
-            },
-        );
-        render();
-    };
-
     const render = () => {
         const tasksList = document.querySelector(".js-tasks");
 
@@ -62,6 +52,17 @@
         bindRemoveEvent();
         bindToggleEvent();
     };
+
+    const addNewTask = (newTask) => {
+        tasks.push(
+            {
+                content: newTask.value.trim(),
+                done: false,
+            },
+        );
+        render();
+    };
+
 
     const onFormSubmit = (event) => {
         event.preventDefault();
