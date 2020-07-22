@@ -1,6 +1,5 @@
 .section {
     display: grid;
-    margin: 10px;
     grid-template-columns: 1fr;
     background-color: white;
     margin-top: 10px;
