@@ -1,14 +1,23 @@
 
 {
-    const tasks = [];
+    let tasks = [];
 
     const removeTask = (index) => {
-        tasks.splice(index, 1);
+
+        tasks = [
+            ...tasks.slice(0,index),
+            ...tasks.slice(index+1),
+        ];
+        
         render();
     };
 
     const toggleTaskDone = (index) => {
-        tasks[index].done = !tasks[index].done;
+        tasks.map((task, taskIndex) => {
+            if (index === taskIndex) {
+                task.done = !task.done
+            };
+        })
         render();
     };
 
@@ -32,6 +41,27 @@
         });
     };
 
+    const addNewTask = (newTask) => {
+
+        tasks = [
+            ...tasks,
+            { content: newTask.value.trim(), done: false }
+        ];
+
+        render();
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const newTask = document.querySelector(".js-newTask");
+        if (newTask.value.trim() !== "") {
+            addNewTask(newTask);
+            newTask.value = ""
+        }
+        newTask.focus();
+    };
+
     const render = () => {
         const tasksList = document.querySelector(".js-tasks");
 
@@ -50,35 +80,13 @@
                     <button class="tasks__button tasks__button--remove js-delete">
                     &#10005;
                     </button>
-            </li>
-          `;
+            </li>`
+          ;
         };
-
         tasksList.innerHTML = htmlString;
 
         bindRemoveEvent();
         bindToggleDoneEvent();
-    };
-
-    const addNewTask = (newTask) => {
-        tasks.push(
-            {
-                content: newTask.value.trim(),
-                done: false,
-            },
-        );
-        render();
-    };
-
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-
-        const newTask = document.querySelector(".js-newTask");
-        if (newTask.value.trim() !== "") {
-            addNewTask(newTask);
-            newTask.value = ""
-        }
-        newTask.focus();
     };
 
     const init = () => {
