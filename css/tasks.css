@@ -9,11 +9,34 @@
     ;
 }
 
-.tasks__header {
+.tasks__container {
     grid-area: a;
+    border-bottom: 4px solid #eee;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.tasks__button1 {
+    background: none;
+    border: none;       
+    padding: 10px;
+    color: hsl(0, 79%, 60%);
+}
+
+@media (max-width: 540px) {
+    .tasks__button1 {
+        flex: 1 0 auto;
+        min-width: 100%;
+        padding: 0 0 20px;
+    }
+}
+
+.tasks__header {
     margin: 0px;
     padding: 20px;
-    border-bottom: 4px solid #eee;
+    flex: 1 0 auto;
+
 }
 
 .tasks__list {

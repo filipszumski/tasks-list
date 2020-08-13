@@ -8,7 +8,7 @@
     ;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 540px) {
     .form {
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -53,7 +53,7 @@
     background-color: hsl(0, 79%, 60%);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 540px) {
     .form__button {
         margin: 0px 20px 20px 20px;
     }
