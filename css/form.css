@@ -39,18 +39,18 @@
     margin: 20px 20px 20px 0px;
     padding: 10px;
     grid-area: c;
-    background-color: hsl(0, 79%, 72%);
+    background-color: hsl(221, 79%, 60%);
     color: white;
     border: none;
     border-radius: 5px;
 }
 
 .form__button:hover {
-    background-color: hsl(0, 79%, 65%);
+    background-color: hsl(221, 79%, 55%);
 }
 
 .form__button:active {
-    background-color: hsl(0, 79%, 60%);
+    background-color: hsl(221, 79%, 50%);
 }
 
 @media (max-width: 540px) {
