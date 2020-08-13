@@ -5,10 +5,10 @@
     const removeTask = (index) => {
 
         tasks = [
-            ...tasks.slice(0,index),
-            ...tasks.slice(index+1),
+            ...tasks.slice(0, index),
+            ...tasks.slice(index + 1),
         ];
-        
+
         render();
     };
 
@@ -62,7 +62,7 @@
         newTask.focus();
     };
 
-    const render = () => {
+    renderTasks = () => {
         const tasksList = document.querySelector(".js-tasks");
 
         let htmlString = "";
@@ -81,12 +81,50 @@
                     &#10005;
                     </button>
             </li>`
-          ;
+                ;
         };
         tasksList.innerHTML = htmlString;
+    };
+
+    renderButtons = () => {
+        const hideDoneTasksButton = document.querySelector(".js-hideDoneTasksButton")
+        const markAllAsDoneButton = document.querySelector(".js-markAllAsDoneButton")
+
+        const isThereAnyTask = tasks.some(task => task.content = true)
+
+        if (isThereAnyTask === true) {
+            hideDoneTasksButton.classList.add("tasks__button1--display")
+            markAllAsDoneButton.classList.add("tasks__button1--display")
+        };
+    };
+
+    bindMarkAllAsDoneButtonEvents = () => {
+        const markAllAsDoneButton = document.querySelector(".js-markAllAsDoneButton")
+
+        const isEveryTaskDone = tasks.every(task => task.done === true);
+
+        if (isEveryTaskDone === true) {
+            markAllAsDoneButton.disabled = true;
+        } else {
+            markAllAsDoneButton.disabled = false;
+        }
+
+        markAllAsDoneButton.addEventListener("click", () => {
+
+            tasks.map(task => task.done = true);
+
+            render();
+        });
+    };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindRemoveEvent();
         bindToggleDoneEvent();
+        bindMarkAllAsDoneButtonEvents();
+        //bindbuttonEvents
     };
 
     const init = () => {
