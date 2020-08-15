@@ -21,7 +21,7 @@
 
 .form__header {
     grid-area:  a;
-    border-bottom: 2px solid #eee;
+    border-bottom: 3px solid #eee;
     padding: 20px;
     margin: 0px;
 }

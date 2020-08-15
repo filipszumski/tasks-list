@@ -8,7 +8,7 @@
 
 .tasks__container {
     grid-area: a;
-    border-bottom: 4px solid #eee;
+    border-bottom: 3px solid #eee;
     display: flex;
     flex-wrap: wrap;
 }
