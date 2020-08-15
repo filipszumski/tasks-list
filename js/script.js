@@ -47,8 +47,11 @@
     };
 
     const hideDoneTasks = () => {
-        hideTasks = !hideTasks;
-        console.log(hideTasks);
+        
+        if(tasks.some(task => task.done)){
+            hideTasks = !hideTasks;
+        };
+
         render();
     };
 
@@ -121,7 +124,7 @@
 
         if (tasks.length) {
             buttonsToHTML = `
-        <button class="tasks__button1 js-hideDoneTasksButton">Ukryj ukończone</button>
+        <button class="tasks__button1 js-hideDoneTasksButton">${hideTasks ? "Pokaż" : "Ukryj"} ukończone</button>
         <button class="tasks__button1 js-markAllAsDoneButton" ${tasks.every((task) => task.done) ? "disabled" : ""}>Ukończ wszystkie</button>
         `};
 
