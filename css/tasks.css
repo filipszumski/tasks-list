@@ -3,10 +3,7 @@
     grid-template-columns: 1fr;
     background-color: white;
     margin-top: 10px;
-    grid-template-areas: 
-    "a"
-    "b"
-    ;
+    grid-template-areas: "a" "b";
 }
 
 .tasks__container {
@@ -16,26 +13,42 @@
     flex-wrap: wrap;
 }
 
+.tasks__header {
+    margin: 0px;
+    padding: 20px;
+    flex: 1;
+}
+
+@media (max-width: 540px) {
+    .tasks__header {
+        min-width: 100%;
+    }
+}
+
+.tasks__buttonsContainer {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 540px) {
+    .tasks__buttonsContainer {
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+}
 
 .tasks__button1 {
     background: none;
-    border: none;   
-    display: none;
+    border: none;
     padding: 10px;
     color: hsl(221, 79%, 55%);
-    align-self: center;
 }
 
 @media (max-width: 540px) {
     .tasks__button1 {
-        flex: 1;
         min-width: 100%;
         padding: 0 0 20px;
     }
-}
-
-.tasks__button1--display {
-    display: initial;
 }
 
 .tasks__button1:hover {
@@ -50,12 +63,6 @@
     color: gray;
 }
 
-.tasks__header {
-    margin: 0px;
-    padding: 20px;
-    flex: 1;
-}
-
 .tasks__list {
     grid-area: b;
     margin: 20px;
@@ -67,6 +74,10 @@
     display: flex;
     border-bottom: 2px solid #eee;
     padding: 15px;
+}
+
+.tasks__listItem--hidden {
+    display: none;
 }
 
 .tasks__listItemText {
@@ -106,7 +117,7 @@
 }
 
 .tasks__button--remove:hover {
-    background-color: hsl(0, 100%,45%);
+    background-color: hsl(0, 100%, 45%);
 }
 
 .tasks__button--remove:active {
