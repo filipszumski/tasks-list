@@ -42,6 +42,7 @@
     border: none;
     padding: 10px;
     color: hsl(221, 79%, 55%);
+    transition: background 0.5s;
 }
 
 @media (max-width: 540px) {
@@ -102,6 +103,7 @@
 
 .tasks__button--done {
     background-color: green;
+    transition: background 0.5s;
 }
 
 .tasks__button--done:hover {
@@ -114,6 +116,7 @@
 
 .tasks__button--remove {
     background-color: red;
+    transition: background 0.5s;
 }
 
 .tasks__button--remove:hover {
