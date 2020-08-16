@@ -1,71 +1,41 @@
 .tasks {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
     background-color: white;
     margin-top: 10px;
-    grid-template-areas: "a" "b";
+    grid-template-areas: 
+    "a b"
+    "c c";
 }
 
 .tasks__container {
     grid-area: a;
     border-bottom: 3px solid #eee;
     display: flex;
-    flex-wrap: wrap;
+    
+}
+
+@media (max-width: 540px) {
+    .tasks__container{
+        flex-basis: 100%;
+        flex-wrap: wrap;
+    }
 }
 
 .tasks__header {
     margin: 0px;
     padding: 20px;
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 @media (max-width: 540px) {
-    .tasks__header {
-        min-width: 100%;
+    .tasks__header{
+        flex-basis: 100%;
     }
-}
-
-.tasks__buttonsContainer {
-    display: flex;
-    align-items: center;
-}
-
-@media (max-width: 540px) {
-    .tasks__buttonsContainer {
-        min-width: 100%;
-        flex-wrap: wrap;
-    }
-}
-
-.tasks__button1 {
-    background: none;
-    border: none;
-    padding: 10px;
-    color: hsl(221, 79%, 55%);
-    transition: background 0.5s;
-}
-
-@media (max-width: 540px) {
-    .tasks__button1 {
-        min-width: 100%;
-        padding: 0 0 20px;
-    }
-}
-
-.tasks__button1:hover {
-    color: hsl(221, 79%, 40%);
-}
-
-.tasks__button1:active {
-    color: hsl(221, 79%, 30%);
-}
-
-.tasks__button1:disabled {
-    color: gray;
 }
 
 .tasks__list {
-    grid-area: b;
+    grid-area: c;
     margin: 20px;
     list-style-type: none;
     padding: 0px;
