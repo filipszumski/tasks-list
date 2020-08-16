@@ -1,5 +1,4 @@
 .buttons {
-    grid-area: b;
     display: flex;
     flex: 0 0 auto;
     align-items: center;
@@ -9,14 +8,15 @@
 @media (max-width: 540px) {
     .buttons {
         flex-basis: 100%;
+        padding-top: 0px;
     }
 }
 
 .buttons__button {
-    flex: 1 0 auto;
-    background: none;
+    flex: 0 0 auto;
+    background: transparent;
     border: none;
-    padding: 10px;
+    margin-left: 10px;
     color: hsl(221, 79%, 55%);
     transition: color 0.5s;
 }
@@ -24,7 +24,7 @@
 @media (max-width: 540px) {
     .buttons__button {
         flex-basis: 100%;
-        padding: 0 0 20px;
+        margin: 10px;
     }
 }
 

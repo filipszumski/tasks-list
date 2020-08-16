@@ -2,15 +2,17 @@
     display: grid;
     grid-template-columns: 1fr auto;
     background-color: white;
-    margin-top: 10px;
+    margin-top: 20px;
     grid-template-areas: 
-    "a b"
-    "c c";
+    "a"
+    "b";
 }
 
 .tasks__container {
     grid-area: a;
+    padding: 20px;
     border-bottom: 3px solid #eee;
+    align-items: center;
     display: flex;
     
 }
@@ -24,7 +26,6 @@
 
 .tasks__header {
     margin: 0px;
-    padding: 20px;
     flex: 1 0 auto;
 }
 
@@ -35,10 +36,10 @@
 }
 
 .tasks__list {
-    grid-area: c;
+    grid-area: b;
     margin: 20px;
     list-style-type: none;
-    padding: 0px;
+    padding-left: 0px;
 }
 
 .tasks__listItem {
