@@ -47,8 +47,8 @@
     };
 
     const toggleHideDoneTasks = () => {
-        
-        if(tasks.some(task => task.done)){
+
+        if (tasks.some(task => task.done)) {
             hideDoneTasks = !hideDoneTasks;
         };
 
@@ -79,7 +79,7 @@
         const markAllAsDoneButton = document.querySelector(".js-markAllAsDoneButton")
         const hideDoneTasksButton = document.querySelector(".js-hideDoneTasksButton")
 
-        if(tasks.length){
+        if (tasks.length) {
             markAllAsDoneButton.addEventListener("click", markAllAsDone);
             hideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
         }
@@ -123,10 +123,16 @@
 
         if (tasks.length) {
             buttonsToHTML = `
-        <button class="buttons__button js-hideDoneTasksButton">${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
-        <button class="buttons__button js-markAllAsDoneButton" ${tasks.every((task) => task.done) ? "disabled" : ""}>Ukończ wszystkie</button>
+        <button
+        class="buttons__button js-hideDoneTasksButton">
+            ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+        </button>
+        <button 
+        class="buttons__button js-markAllAsDoneButton" ${tasks.every((task) => task.done) ? "disabled" : ""}>
+            Ukończ wszystkie
+        </button>
         `;
-    };
+        };
 
         tasksButtons.innerHTML = buttonsToHTML;
     };
