@@ -1,44 +1,23 @@
 .form {
     display: grid;
-    grid-template-columns: 1fr minmax(131px, auto);
-    background-color: white;
-    grid-template-areas: 
-    "a a"
-    "b c"
-    ;
+    grid-template-columns: 1fr auto;
+    grid-gap: 10px;
 }
 
 @media (max-width: 540px) {
     .form {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "a"
-        "b"
-        "c"
-        ;
+        grid-template-columns: 1fr
     }
 }
 
-.form__header {
-    grid-area:  a;
-    border-bottom: 3px solid #eee;
-    padding: 20px;
-    margin: 0px;
-}
-
-
 .form__input {
-    margin: 20px;
     padding: 10px;
-    grid-area: b;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .form__button {
-    margin: 20px 20px 20px 0px;
     padding: 10px;
-    grid-area: c;
     background-color: hsl(221, 79%, 60%);
     color: white;
     border: none;
@@ -48,15 +27,9 @@
 
 .form__button:hover {
     background: hsl(221, 79%, 55%);
-    transform: scale(1.15);
+    transform: scale(1.10);
 }
 
 .form__button:active {
     background-color: hsl(221, 79%, 50%);
-}
-
-@media (max-width: 540px) {
-    .form__button {
-        margin: 0px 20px 20px 20px;
-    }
 }

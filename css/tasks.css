@@ -1,68 +1,24 @@
 .tasks {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    background-color: white;
-    margin-top: 20px;
-    grid-template-areas: 
-    "a"
-    "b";
-}
-
-.tasks__container {
-    grid-area: a;
-    padding: 20px;
-    border-bottom: 3px solid #eee;
-    align-items: center;
-    display: flex;
-    
-}
-
-@media (max-width: 540px) {
-    .tasks__container{
-        flex-basis: 100%;
-        flex-wrap: wrap;
-    }
-}
-
-.tasks__header {
-    margin: 0px;
-    flex: 1 0 auto;
-}
-
-@media (max-width: 540px) {
-    .tasks__header{
-        flex-basis: 100%;
-    }
-}
-
-.tasks__list {
-    grid-area: b;
-    margin: 20px;
     list-style-type: none;
-    padding-left: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .tasks__listItem {
-    display: flex;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
     border-bottom: 2px solid #eee;
-    padding: 15px;
 }
 
 .tasks__listItem--hidden {
     display: none;
 }
 
-.tasks__listItemText {
-    flex: 1;
-    padding: 0px 10px;
-    align-self: center;
-}
-
 .tasks__listItemText--done {
-    flex: 1;
-    padding: 0px 10px;
     text-decoration: line-through;
-    align-self: center;
 }
 
 .tasks__button {
