@@ -50,7 +50,7 @@
 
         if (tasks.some(task => task.done)) {
             hideDoneTasks = !hideDoneTasks;
-        };
+        }
 
         render();
     };
@@ -144,7 +144,6 @@
         bindRemoveEvent();
         bindToggleDoneEvent();
         bindButtonsEvents();
-        //bindbuttonEvents
     };
 
     const init = () => {
