@@ -10,11 +10,11 @@ This is to do list application. It allows you to manage your tasks by adding new
 - JavaScript ES6+
 - BEM
 ## FEATURES
-- Adding tasks.
-- Removing tasks.
-- Marking tasks if done.
-- Marking all tasks done.
-- Hide done tasks.
+- Adding tasks
+- Removing tasks
+- Marking tasks if done
+- Marking all tasks done
+- Hide done tasks
 
 ## My other projects
 
